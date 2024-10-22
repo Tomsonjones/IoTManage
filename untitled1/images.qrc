@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/avatar.png</file>
+        <file>images/img.qss</file>
+        <file>config.ini</file>
+        <file>images/8ba544e31176a4657b2f4d1c469645e7.png</file>
+        <file>images/8370ccc18a0ee603152df2e214d8d17c.png</file>
+        <file>images/b0ca53c4d90468f2a0982aaa20423706.png</file>
+        <file>images/d1d904c54aa3a0d5ac08453030cc55e4.png</file>
+        <file>images/e20bba82449797832e24a2ceb82727ef.png</file>
+        <file>images/3a6581962d535201cc3d77da92fe6293.png</file>
+        <file>images/7dca0f2c1d61dbcd7d96e9e400788529.png</file>
+        <file>images/010820cb3f149407392e31f5823c9754.png</file>
+        <file>images/e0d9152e4ea0a442628328fbbd4fe873.png</file>
+        <file>images/35f68c02d6145b28c9e65d15148dd628.png</file>
+        <file>images/51977ad9893645146a00202b02385ca9.png</file>
+        <file>images/ae16d1bc7212585b58ba06316f3eaf3c.png</file>
+        <file>images/82cfe2c585e2a747866fdb20c07f51e7.png</file>
+        <file>images/026193cddb2f45df826767fe108e3505.png</file>
+        <file>images/f340a13c4375f11875564c9e3f94d3be.png</file>
+    </qresource>
+</RCC>
