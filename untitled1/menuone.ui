@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MenuOne</class>
+ <widget class="QDialog" name="MenuOne">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1125</width>
+    <height>733</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1125</width>
+    <height>733</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1125</width>
+    <height>733</height>
+   </size>
+  </property>
+  <widget class="QPushButton" name="deviceMonitorButton">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>0</y>
+     <width>61</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>61</width>
+     <height>61</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>61</width>
+     <height>61</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/8ba544e31176a4657b2f4d1c469645e7.png</normaloff>:/images/8ba544e31176a4657b2f4d1c469645e7.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>61</width>
+     <height>61</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="dataQueryButton">
+   <property name="geometry">
+    <rect>
+     <x>850</x>
+     <y>0</y>
+     <width>61</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>61</width>
+     <height>61</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>61</width>
+     <height>61</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/8370ccc18a0ee603152df2e214d8d17c.png</normaloff>:/images/8370ccc18a0ee603152df2e214d8d17c.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>61</width>
+     <height>61</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="systemSettingsButton">
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>0</y>
+     <width>61</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>61</width>
+     <height>61</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>61</width>
+     <height>61</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/d1d904c54aa3a0d5ac08453030cc55e4.png</normaloff>:/images/d1d904c54aa3a0d5ac08453030cc55e4.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>61</width>
+     <height>61</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="otherSettingsButton">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>0</y>
+     <width>61</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>61</width>
+     <height>61</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>61</width>
+     <height>61</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/b0ca53c4d90468f2a0982aaa20423706.png</normaloff>:/images/b0ca53c4d90468f2a0982aaa20423706.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>61</width>
+     <height>61</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label1">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>0</y>
+     <width>75</width>
+     <height>65</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>75</width>
+     <height>65</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>75</width>
+     <height>65</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="images.qrc">:/images/avatar1.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="QuitButton">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>0</y>
+     <width>61</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>61</width>
+     <height>61</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>61</width>
+     <height>61</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/e20bba82449797832e24a2ceb82727ef.png</normaloff>:/images/e20bba82449797832e24a2ceb82727ef.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>61</width>
+     <height>61</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>60</y>
+     <width>1126</width>
+     <height>670</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>1126</width>
+     <height>670</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1126</width>
+     <height>670</height>
+    </size>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="page"/>
+   <widget class="QWidget" name="page_2"/>
+  </widget>
+ </widget>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
