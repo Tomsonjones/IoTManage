@@ -23,7 +23,7 @@ public:
     ~MySqlite();
     bool LoginCheck(QString username,QString password);
     bool UserRegister(QString username, QString password, QString email, QString phone, QString nickname);
-
+    void AddDevice(QString deviceName,QString type,QString location,QString manufacturer,QString model,QString installDate);
 
 private:
     Ui::MySqlite *ui;

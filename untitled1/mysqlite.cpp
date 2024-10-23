@@ -54,7 +54,7 @@ bool MySqlite::LoginCheck(QString username, QString password)
         }
     }
     db.close();
-    return false; 
+    return false;
 }
 
 bool MySqlite::UserRegister(QString username, QString password, QString email, QString phone, QString nickname)
@@ -127,6 +127,39 @@ bool MySqlite::UserRegister(QString username, QString password, QString email, Q
 
     db.close();
     return true;
+}
+
+void MySqlite::AddDevice(QString deviceName, QString type, QString location, QString manufacturer, QString model, QString installDate)
+{
+    // 确保数据库连接只创建一次
+    if (!QSqlDatabase::contains("qt_sql_default_connection")) {
+        QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+        db.setDatabaseName("D:/code/qt/IoTManage/build-untitled1-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/users.db");
+        if (!db.open()) {
+            qDebug() << "Error: Could not connect to database.";
+            return;
+        }
+    }
+
+    // 插入设备信息到 devices 表中
+    QSqlQuery query;
+    query.prepare("INSERT INTO devices (name, type, location, manufacturer, model, installation_date) "
+                  "VALUES (?, ?, ?, ?, ?, ?)");
+
+    // 使用 addBindValue 进行参数绑定
+    query.addBindValue(deviceName);
+    query.addBindValue(type);
+    query.addBindValue(location);
+    query.addBindValue(manufacturer);
+    query.addBindValue(model);
+    query.addBindValue(installDate);
+
+    //执行sql语句
+    if (!query.exec()) {
+        qDebug() << "添加设备失败" << query.lastError();
+    } else {
+        qDebug() << "添加设备成功";
+    }
 }
 
 

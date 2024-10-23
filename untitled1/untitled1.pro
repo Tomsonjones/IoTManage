@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    adddevice.cpp \
     alarmrecord.cpp \
     barchart.cpp \
     base.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
     devicemonitor.cpp \
     equipmanage.cpp \
     equipmentpanel.cpp \
+    filterdialog.cpp \
     iniconfig.cpp \
     linegraph.cpp \
     main.cpp \
@@ -44,6 +46,7 @@ SOURCES += \
     usermanagementlow.cpp
 
 HEADERS += \
+    adddevice.h \
     alarmrecord.h \
     barchart.h \
     base.h \
@@ -53,6 +56,7 @@ HEADERS += \
     devicemonitor.h \
     equipmanage.h \
     equipmentpanel.h \
+    filterdialog.h \
     iniconfig.h \
     linegraph.h \
     menuone.h \
@@ -71,6 +75,7 @@ HEADERS += \
     usermanagementlow.h
 
 FORMS += \
+    adddevice.ui \
     alarmrecord.ui \
     barchart.ui \
     base.ui \
@@ -80,6 +85,7 @@ FORMS += \
     devicemonitor.ui \
     equipmanage.ui \
     equipmentpanel.ui \
+    filterdialog.ui \
     iniconfig.ui \
     linegraph.ui \
     menuone.ui \

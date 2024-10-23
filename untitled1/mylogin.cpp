@@ -86,9 +86,9 @@ void Mylogin::openRegisterDialog()
 
     // 通过 exec() 打开对话框，并等待用户点击确定或取消
     if (dialog.exec() == QDialog::Accepted) {
-        qDebug() << "注册对话框已关闭，用户成功注册";
+
     } else {
-        qDebug() << "注册对话框已关闭，注册未成功";
+
     }
 }
 

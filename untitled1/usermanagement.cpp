@@ -8,67 +8,63 @@ UserManagement::UserManagement(QWidget *parent) :
     ui->setupUi(this);
 
     // 确保数据库连接只创建一次
-        if (!QSqlDatabase::contains("qt_sql_default_connection")) {
-            QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-            db.setDatabaseName("D:/code/qt/IoTManage/build-untitled1-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/users.db");
-            if (!db.open()) {
-                qDebug() << "Error: Could not connect to database.";
-                return;
-            }
+    if (!QSqlDatabase::contains("qt_sql_default_connection")) {
+        QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+        db.setDatabaseName("D:/code/qt/IoTManage/build-untitled1-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/users.db");
+        if (!db.open()) {
+            qDebug() << "Error: Could not connect to database.";
+            return;
         }
-
-        // 初始化模型并设置表格
-        model = new QSqlTableModel(this);
-        model->setTable("users");
-        model->setEditStrategy(QSqlTableModel::OnManualSubmit);
-        model->select();
-
-        // 设置表头，显示所有列
-        model->setHeaderData(0, Qt::Horizontal, tr("用户ID"));
-        model->setHeaderData(1, Qt::Horizontal, tr("账户"));
-        model->setHeaderData(2, Qt::Horizontal, tr("密码"));
-        model->setHeaderData(3, Qt::Horizontal, tr("邮箱"));
-        model->setHeaderData(4, Qt::Horizontal, tr("电话"));
-        model->setHeaderData(5, Qt::Horizontal, tr("昵称"));
-        model->setHeaderData(6, Qt::Horizontal, tr("角色"));
-
-        // 设置表格视图
-        ui->tableView->setModel(model);
-
-        // 设置每一列的固定宽度
-        ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
-        ui->tableView->setColumnWidth(0, 80);
-        ui->tableView->setColumnWidth(1, 100);
-        ui->tableView->setColumnWidth(2, 100);
-        ui->tableView->setColumnWidth(3, 160);
-        ui->tableView->setColumnWidth(4, 100);
-        ui->tableView->setColumnWidth(5, 100);
-        ui->tableView->setColumnWidth(6, 50);
-
-        // 创建按钮
-        DeleteButton = new QPushButton(tr("删除"));
-        ChangeButton = new QPushButton(tr("修改"));
-        ChangeButton->setFixedSize(100, 48);
-        DeleteButton->setFixedSize(100, 48);
-
-        buttonBox = new QDialogButtonBox(Qt::Vertical);
-        buttonBox->addButton(DeleteButton, QDialogButtonBox::ActionRole);
-        buttonBox->addButton(ChangeButton, QDialogButtonBox::ActionRole);
-
-        // 连接按钮的信号与槽
-        connect(DeleteButton, &QAbstractButton::clicked, this, &UserManagement::DeleteAction);
-        connect(ChangeButton, &QAbstractButton::clicked, this, &UserManagement::ChangeAction);
-
-        // 创建主布局
-        QHBoxLayout *mainLayout = new QHBoxLayout;
-        mainLayout->addWidget(ui->tableView);
-        mainLayout->addWidget(buttonBox);
-        setLayout(mainLayout);
-
-        // 设置窗口尺寸和标题
-        setMinimumSize(600, 400);
-        setWindowTitle(tr("User Management"));
     }
+
+    // 初始化模型并设置表格
+    model = new QSqlTableModel(this);
+    model->setTable("users");
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model->select();
+
+    // 设置表头，显示所有列
+    model->setHeaderData(0, Qt::Horizontal, tr("用户ID"));
+    model->setHeaderData(1, Qt::Horizontal, tr("账户"));
+    model->setHeaderData(2, Qt::Horizontal, tr("密码"));
+    model->setHeaderData(3, Qt::Horizontal, tr("邮箱"));
+    model->setHeaderData(4, Qt::Horizontal, tr("电话"));
+    model->setHeaderData(5, Qt::Horizontal, tr("昵称"));
+    model->setHeaderData(6, Qt::Horizontal, tr("角色"));
+
+    // 设置表格视图
+    ui->tableView->setModel(model);
+
+    // 设置每一列的固定宽度
+    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+    ui->tableView->setColumnWidth(0, 80);
+    ui->tableView->setColumnWidth(1, 100);
+    ui->tableView->setColumnWidth(2, 100);
+    ui->tableView->setColumnWidth(3, 160);
+    ui->tableView->setColumnWidth(4, 100);
+    ui->tableView->setColumnWidth(5, 100);
+    ui->tableView->setColumnWidth(6, 50);
+
+    // 创建按钮
+    DeleteButton = new QPushButton(tr("删除"));
+    ChangeButton = new QPushButton(tr("修改"));
+    ChangeButton->setFixedSize(100, 48);
+    DeleteButton->setFixedSize(100, 48);
+
+    buttonBox = new QDialogButtonBox(Qt::Vertical);
+    buttonBox->addButton(DeleteButton, QDialogButtonBox::ActionRole);
+    buttonBox->addButton(ChangeButton, QDialogButtonBox::ActionRole);
+
+    // 连接按钮的信号与槽
+    connect(DeleteButton, &QAbstractButton::clicked, this, &UserManagement::DeleteAction);
+    connect(ChangeButton, &QAbstractButton::clicked, this, &UserManagement::ChangeAction);
+
+    // 创建主布局
+    QHBoxLayout *mainLayout = new QHBoxLayout;
+    mainLayout->addWidget(ui->tableView);
+    mainLayout->addWidget(buttonBox);
+    setLayout(mainLayout);
+}
 
 void UserManagement::DeleteAction() {
     // 获取选中的模型行并删除

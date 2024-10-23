@@ -8,14 +8,15 @@ UserManagementLow::UserManagementLow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    //设置tableview字体格式
     ui->tableView->setStyleSheet(
-        "QHeaderView::section {"
-        "    font-size: 12px;"  // 修改为你想要的字体大小
-        "    padding: 4px;"
-        "    background-color: #f0f0f0;"
-        "    border: 1px solid #d4d4d4;"
-        "}"
-    );
+                "QHeaderView::section {"
+                "    font-size: 12px;"
+                "    padding: 4px;"
+                "    background-color: #f0f0f0;"
+                "    border: 1px solid #d4d4d4;"
+                "}"
+                );
 
     // 创建按钮
     ChangeButton = new QPushButton(tr("修改"));
@@ -94,10 +95,19 @@ void UserManagementLow::loadUserData(const QString& username) {
             model->setData(index, "用户");
         }
     }
+
+    //让普通用户无法修改自己的用户名 和 角色权限
+    //让普通用户管理界面的 下标 1 和 6 列只读 却无法编辑 方法参考csdn
+    //原理大致是： 1.自定义QItemDelegate类 名为ReadOnlyDelegate
+    //           2.通过重写 createEditor 方法来实现某些列的只读功能
+    //QItemDelegate 是 Qt 中用于控制如何编辑、显示和绘制数据项的类。
+    //它负责为 QTableWidget 或 QTableView 的单元格提供编辑器控件（如文本框、下拉框等）和处理编辑过程
+    ReadOnlyDelegate* readOnlyDelegate = new ReadOnlyDelegate(this);
+    ui->tableView->setItemDelegateForColumn(1, readOnlyDelegate);
+    ui->tableView->setItemDelegateForColumn(6, readOnlyDelegate);
 }
 
 void UserManagementLow::ChangeAction() {
-    // 提交修改，不能修改用户名
     if (!model->submitAll()) {
         QMessageBox::critical(this, tr("修改失败"), tr("修改失败: ") + model->lastError().text());
     } else {
